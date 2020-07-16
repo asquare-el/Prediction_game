@@ -1,22 +1,44 @@
 import random
-def login_game:
-    print('Welcome to the GUESS ME/n')
+def login_game():
     print ('give the range for the game')
-    global a=int(input())
-    global b=int(input())
-def generate_no:
-    global c=random.randint(a,b)
-    return c
-def guess_the_no:
+    a=int(input())
+    b=int(input())
+    return a,b 
+
+def generate_no():
+    rand_number=random.randint(a,b)
+    return rand_number
+def guess_the_no():
     print(f"guess the number between {a} and {b}")
-    d=int(input())
-def check_limit:
-    if c==d:
-        print(f" CONGRATULATIONS YOUR GUESS {d} IS CORRECT")
-    elif c<d:
-        print(f"Your guess {d} is incorrect")
-        print(f"Guess someting smaller than {d}") 
-    elif c>d:
-        print(f"Your guess {d} is incorrect")
-        print(f"Guess something greater than {d}")
+    user_number=int(input())
+    return user_number
+
+def check_limit():
+    print(f"\nI have selected a number between {a} and {b}...")
+    print("You have 6 chances to guess that number...")
+    i = 1
+    r = 1
+    while i<7:   
+        if user_number < rand_number:
+            print("\n" + name + ", My number is greater than your guessed number")
+            print("you now have " + str(6-i)+ " chances left" )
+            i = i+1
+        elif user_number > rand_number:
+            print("\n" + name + ", My number is less than your guessed number")
+            print("you now have " + str(6-i)+ " chances left" )
+            i = i+1
+        elif user_number == rand_number:
+            print("\nCongratulations "+name+"!! You have guessed the correct number!")
+            r = 0;
+
+def provokation():
+    login_game()
+    generate_no()
+    guess_the_no()
+    check_limit()
+
+name= input("Please enter your name: ")            
+print("Welcome to guess the number, "+ name)
+provokation()
+        
         
