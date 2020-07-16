@@ -5,7 +5,7 @@ def login_game():
     b=int(input())
     return a,b 
 
-def generate_no():
+def generate_no(a,b):
     rand_number=random.randint(a,b)
     return rand_number
 def guess_the_no():
@@ -13,7 +13,7 @@ def guess_the_no():
     user_number=int(input())
     return user_number
 
-def check_limit():
+def check_limit(user_number,rand_number):
     print(f"\nI have selected a number between {a} and {b}...")
     print("You have 6 chances to guess that number...")
     i = 1
@@ -33,12 +33,13 @@ def check_limit():
 
 def provokation():
     login_game()
-    generate_no()
+    generate_no(a,b)
     guess_the_no()
-    check_limit()
+    check_limit(user_number,rand_number)
 
 name= input("Please enter your name: ")            
 print("Welcome to guess the number, "+ name)
 provokation()
+        
         
         
