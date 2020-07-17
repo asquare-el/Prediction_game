@@ -30,7 +30,10 @@ def check_limit(user_number,rand_number,a,b):
             i = i+1
         elif user_number == rand_number:
             print("\nCongratulations "+name+"!! You have guessed the correct number!")
-            r = 0;
+            r = 0
+            return
+        user_number=int(input("enter the next number"))
+    print("you lose")        
 
 def provokation():
     a,b=login_game()
@@ -41,6 +44,4 @@ def provokation():
 name= input("Please enter your name: ")            
 print("Welcome to guess the number, "+ name)
 provokation()
-        
-        
         
